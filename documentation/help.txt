@@ -1,0 +1,106 @@
+Projet météo CY-Météo
+
+
+#Les arguments et options des types de données
+
+NOM
+	-t <mode>		températures
+
+	DESCRIPTION
+
+		1 :	produit en sortie les températures minimales, maximales et moyennes par station dans l’ordre croissant du numéro de station.
+
+		2 : produit en sortie les températures moyennes par date/heure, triées dans l’ordre chronologique. La moyenne se fait sur toutes les stations.
+	
+		3 :	produit en sortie les températures par date/heure par station. Elles seront triées d’abord par ordre chronologique, puis par ordre croissant de l’identifiant de la station.
+
+
+
+NOM
+	-p <mode>		pressions atmosphériques
+
+	DESCRIPTION
+
+		1 :	produit en sortie les pressions minimales, maximales et moyennes par station dans l’ordre croissant du numéro de station.
+
+		2 :	produit en sortie les pressions moyennes par date/heure, triées dans l’ordre chronologique. La moyenne se fait sur toutes les stations.
+	
+		3 :	produit en sortie les pressions par date/heure par station. Elles seront triées d’abord par ordre chronologique, puis par ordre croissant de l’identifiant de la station.
+
+
+
+NOM
+
+	-w 		vent
+
+	DESCRIPTION
+		produit en sortie l’orientation moyenne et la vitesse moyenne des vents pour chaque station. On a une moyenne sur l’axe X et une moyenne sur l’axe Y. Les données sont triées par identifiant croissant de la station
+
+
+NOM
+	-h		altitude
+
+	DESCRIPTION
+		produit en sortie l’altitude pour chaque station. Les altitudes seront triées par ordre décroissant. 
+
+
+NOM
+	-m		humidité
+
+	DESCRIPTION
+		produit en sortie l’humidité maximale pour chaque station. Les valeurs d’humidités seront triées par ordre décroissant.
+	
+
+
+
+#Les arguments et options des types de lieux
+
+DESCRIPTION
+	Une seule option à la fois peut être activée au maximum. Ces options ne sont pas obligatoires : si aucune n’est activée, il n’y aura alors pas de limitation géographique sur les mesures traitées
+
+NOM
+	-F		france métropolitaine + corse.
+	-G		guyane française
+	-S		saint-pierre et miquelon : ile située à l’est du canada
+	-A		antilles
+	-O		océan indien
+	-Q		antarctique
+
+
+
+#Les arguments et options des types de dates
+
+NOM
+	-d <min> <max>		dates
+
+	DESCRIPTION
+		les données de sortie sont dans l’intervalle de dates [<min>..<max>] incluses. Le format des dates est une chaine de type YYYY-MM-DD (année-mois-jour).
+
+
+
+#Les arguments et options des types de dates
+
+DESCRIPTION
+	Il est possible d’imposer le mode de tri des données : soit à l’aide d’un tableau (ou liste chaînée), soit à l’aide d’une structure d’arbre binaire, ABR ou AVL.
+	Une seule peut être activée à la fois.
+	Si aucune option de tri n’est activée, par défaut le tri se fera à l’aide d’un AVL.
+
+NOM
+	--tab		tri effectué à l’aide d’une structure linéaire (au choix un tableau ou une liste chaînée)
+	--abr		tri effectué l’aide d’une structure de type ABR
+	--avl		tri effectué à l’aide d’une structure de type AVL
+
+
+
+#Les arguments et options des types de fichiers
+
+DESCRIPTION
+	Le nom du fichier d’entrée doit être renseigné pour que le script puisse
+	acquérir toutes les données.
+
+NOM
+	-f <nom_fichier>		 fichier d’entrée. Cette option est obligatoire
+
+
+EXEMPLE DE COMMANDE 
+	./script_meteo.sh -p2 -w -A -f data.csv 
